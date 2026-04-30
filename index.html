@@ -35,7 +35,7 @@
     .section-title .icon{width:28px;height:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
     .section-title .icon span{display:block;border-radius:4px;background:#3c9a3e}
     .units{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-bottom:46px}
-    .unit-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);min-height:210px;padding:14px 10px 10px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease}
+    .unit-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);min-height:210px;padding:14px 10px 10px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
     .unit-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,32,43,.16)}
     .unit-card::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--accent)}
     .unit-icon{width:60px;height:60px;border-radius:50%;background:var(--soft);display:grid;place-items:center;margin:16px 0 10px;color:var(--accent)}
@@ -43,8 +43,8 @@
     .unit-card h2{margin:0;color:var(--accent);font-size:18px;line-height:1.1}
     .unit-card h3{margin:6px 0 14px;font-size:17px;line-height:1.2;color:#111827}
     .open-btn{margin-top:auto;border:1.5px solid var(--accent);color:var(--accent);background:white;border-radius:12px;padding:8px 12px;text-decoration:none;font-weight:900;font-size:13px;display:inline-flex;align-items:center;gap:6px}
-    .timeline-section{margin-top:12px;padding-bottom:50px}
-    .timeline-title{display:flex;align-items:center;gap:14px;margin:0 0 30px;font-size:30px;color:#162638}
+    .timeline-section{margin-top:12px;padding-bottom:34px}
+    .timeline-title,.resources-title{display:flex;align-items:center;gap:14px;margin:0 0 24px;font-size:30px;color:#162638}
     .calendar-icon{width:28px;height:28px;color:#159aa0}
     .course-timeline{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:28px 18px 0;margin:0 24px}
     .course-timeline::before{content:"";position:absolute;top:38px;left:8%;right:8%;height:3px;background:#1aa2aa;border-radius:999px}
@@ -54,12 +54,28 @@
     .timeline-item b{display:block;font-size:20px;color:var(--accent);margin-bottom:5px}
     .timeline-item strong{display:block;font-size:18px;color:#111827;margin-bottom:8px}
     .timeline-item span{color:var(--muted);font-size:16px}
-    .resources{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:36px}
-    .resource-link{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;border:1px solid var(--line);background:#fff;color:#226a85;text-decoration:none;font-weight:900;padding:12px;box-shadow:0 6px 18px rgba(16,32,43,.07)}
-    .resources-title{margin:48px 0 14px;font-size:24px;color:#162638}
-    @media(max-width:900px){.units{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,1fr)}.header-inner{align-items:flex-start}.header-logo img{width:210px}.course-timeline{grid-template-columns:1fr;margin:0;padding:0}.course-timeline::before{display:none}.timeline-item{display:grid;grid-template-columns:32px 1fr;text-align:left;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}.dot{margin:4px auto 0}}
-    @media(max-width:720px){header{padding:28px 18px}.header-inner{display:block}.header-logo{margin-top:24px}.header-logo img{width:190px}.top-actions{gap:10px}.btn{font-size:14px;padding:11px 15px}main{padding:22px 16px}.units,.resources{grid-template-columns:1fr}.unit-card{min-height:auto}.section-title,.timeline-title{font-size:26px}}
-    @media print{header .top-actions,.resources{display:none}.unit-card{box-shadow:none}.course-timeline::before{display:none}}
+    .literacy-wrap{margin:10px 0 48px}
+    .literacy-intro{background:linear-gradient(135deg,#ffffff,#f1fbfb);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px;margin-bottom:18px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+    .literacy-intro h3{margin:0 0 8px;color:#162638;font-size:22px}
+    .literacy-intro p{margin:0;color:var(--muted)}
+    .use-list{margin:0;padding-left:20px;color:var(--muted)}
+    .literacy-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+    .literacy-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 20px rgba(16,32,43,.08);padding:16px;position:relative;overflow:hidden}
+    .literacy-card::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--accent)}
+    .literacy-card h3{margin:8px 0 5px;color:var(--accent);font-size:18px}
+    .literacy-card .unit-focus{font-weight:900;color:#111827;margin-bottom:8px;font-size:15px}
+    .chips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+    .chip{display:inline-flex;border-radius:999px;background:var(--soft);color:var(--accent);padding:5px 8px;font-size:12px;font-weight:900}
+    .literacy-card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+    .literacy-card li{margin:5px 0}
+    .literacy-link{display:inline-flex;margin-top:12px;color:var(--accent);font-weight:900;text-decoration:none}
+    .crosswalk{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 20px rgba(16,32,43,.08);padding:18px}
+    .crosswalk h3{margin:0 0 10px;color:#162638}
+    .strategy-row{display:grid;grid-template-columns:220px 1fr;gap:12px;border-top:1px solid var(--line);padding:12px 0;color:var(--muted)}
+    .strategy-row:first-of-type{border-top:0}.strategy-row b{color:#162638}
+    .resources{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}.resource-link{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;border:1px solid var(--line);background:#fff;color:#226a85;text-decoration:none;font-weight:900;padding:12px;box-shadow:0 6px 18px rgba(16,32,43,.07)}
+    @media(max-width:1150px){.units,.literacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,1fr)}.header-inner{align-items:flex-start}.header-logo img{width:210px}.course-timeline{grid-template-columns:1fr;margin:0;padding:0}.course-timeline::before{display:none}.timeline-item{display:grid;grid-template-columns:32px 1fr;text-align:left;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}.dot{margin:4px auto 0}.literacy-intro{grid-template-columns:1fr}}
+    @media(max-width:720px){header{padding:28px 18px}.header-inner{display:block}.header-logo{margin-top:24px}.header-logo img{width:190px}.top-actions{gap:10px}.btn{font-size:14px;padding:11px 15px}main{padding:22px 16px}.units,.resources,.literacy-grid{grid-template-columns:1fr}.unit-card{min-height:auto}.section-title,.timeline-title,.resources-title{font-size:26px}.strategy-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -71,7 +87,7 @@
         <div class="top-actions">
           <a class="btn" href="https://www.openscied.org/" target="_blank" rel="noopener">◎ OpenSciEd.org</a>
           <a class="btn" href="#units">▰ Open Unit Dashboards</a>
-          
+          <a class="btn" href="#literacy">✦ Literacy Overview</a>
         </div>
       </div>
       <div class="header-logo">
@@ -83,94 +99,91 @@
   <main class="wrap">
     <section id="units" aria-label="Biology unit dashboards">
       <h2 class="section-title"><span class="icon"><span></span><span></span><span></span><span></span></span>Biology Units</h2>
-
       <div class="units">
-        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.1/','_blank')" style="--accent:var(--b1);--soft:#e8f5e5">
-          <div class="unit-icon" aria-hidden="true">
-            <!-- leaf -->
-            <svg viewBox="0 0 48 48">
-              <path d="M10 30c10-18 26-18 28-22-2 18-10 28-26 30"/>
-              <path d="M16 28c6-6 12-10 18-14"/>
-            </svg>
-          </div>
-          <h2>Unit 1</h2>
-          <h3>Ecosystems</h3>
-          <a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.1/" target="_blank" rel="noopener">↗ Open Dashboard</a>
-        </article>
-
-        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.2/','_blank')" style="--accent:var(--b2);--soft:#e5f7f4">
-          <div class="unit-icon" aria-hidden="true">
-            <!-- atom -->
-            <svg viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="3"/>
-              <ellipse cx="24" cy="24" rx="14" ry="6"/>
-              <ellipse cx="24" cy="24" rx="6" ry="14"/>
-            </svg>
-          </div>
-          <h2>Unit 2</h2>
-          <h3>Matter & Energy</h3>
-          <a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.2/" target="_blank" rel="noopener">↗ Open Dashboard</a>
-        </article>
-
-        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.3/','_blank')" style="--accent:var(--b3);--soft:#e7f3ff">
-          <div class="unit-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="4"/><circle cx="17" cy="18" r="2"/><circle cx="30" cy="18" r="2"/><circle cx="30" cy="30" r="2"/></svg>
-          </div>
-          <h2>Unit 3</h2>
-          <h3>Inheritance & Variation</h3>
-          <a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.3/" target="_blank" rel="noopener">↗ Open Dashboard</a>
-        </article>
-
-        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.4/','_blank')" style="--accent:var(--b4);--soft:#e4f8f8">
-          <div class="unit-icon" aria-hidden="true">
-            <!-- bird -->
-            <svg viewBox="0 0 48 48">
-              <path d="M6 26c10-10 22-10 36 0"/>
-              <path d="M20 26l4 6 4-6"/>
-            </svg>
-          </div>
-          <h2>Unit 4</h2>
-          <h3>Natural Selection</h3>
-          <a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.4/" target="_blank" rel="noopener">↗ Open Dashboard</a>
-        </article>
-
-        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.5/','_blank')" style="--accent:var(--b5);--soft:#e8f5e5">
-          <div class="unit-icon" aria-hidden="true">
-            <!-- tree -->
-            <svg viewBox="0 0 48 48">
-              <path d="M24 10c-6 6-10 10-10 16h20c0-6-4-10-10-16z"/>
-              <path d="M22 26v10M26 26v10"/>
-            </svg>
-          </div>
-          <h2>Unit 5</h2>
-          <h3>Common Ancestry & Speciation</h3>
-          <a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.5/" target="_blank" rel="noopener">↗ Open Dashboard</a>
-        </article>
+        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.1/','_blank')" style="--accent:var(--b1);--soft:#e8f5e5"><div class="unit-icon"><svg viewBox="0 0 48 48"><path d="M10 30c10-18 26-18 28-22-2 18-10 28-26 30"/><path d="M16 28c6-6 12-10 18-14"/></svg></div><h2>Unit 1</h2><h3>Ecosystems</h3><a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.1/" target="_blank">↗ Open Dashboard</a></article>
+        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.2/','_blank')" style="--accent:var(--b2);--soft:#e5f7f4"><div class="unit-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="3"/><ellipse cx="24" cy="24" rx="14" ry="6"/><ellipse cx="24" cy="24" rx="6" ry="14"/></svg></div><h2>Unit 2</h2><h3>Matter & Energy</h3><a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.2/" target="_blank">↗ Open Dashboard</a></article>
+        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.3/','_blank')" style="--accent:var(--b3);--soft:#e7f3ff"><div class="unit-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="4"/><circle cx="17" cy="18" r="2"/><circle cx="30" cy="18" r="2"/><circle cx="30" cy="30" r="2"/></svg></div><h2>Unit 3</h2><h3>Inheritance & Variation</h3><a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.3/" target="_blank">↗ Open Dashboard</a></article>
+        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.4/','_blank')" style="--accent:var(--b4);--soft:#e4f8f8"><div class="unit-icon"><svg viewBox="0 0 48 48"><path d="M6 26c10-10 22-10 36 0"/><path d="M20 26l4 6 4-6"/></svg></div><h2>Unit 4</h2><h3>Natural Selection</h3><a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.4/" target="_blank">↗ Open Dashboard</a></article>
+        <article class="unit-card" onclick="window.open('https://smitka313.github.io/OpenSciEd-B.5/','_blank')" style="--accent:var(--b5);--soft:#e8f5e5"><div class="unit-icon"><svg viewBox="0 0 48 48"><path d="M24 10c-6 6-10 10-10 16h20c0-6-4-10-10-16z"/><path d="M22 26v10M26 26v10"/></svg></div><h2>Unit 5</h2><h3>Common Ancestry & Speciation</h3><a class="open-btn" href="https://smitka313.github.io/OpenSciEd-B.5/" target="_blank">↗ Open Dashboard</a></article>
       </div>
     </section>
 
     <section class="timeline-section" aria-label="Course timeline">
-      <h2 class="timeline-title">
-        <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Course Timeline
-      </h2>
+      <h2 class="timeline-title"><svg class="calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Course Timeline</h2>
       <div class="course-timeline">
-        <a class="timeline-item" style="--accent:var(--b1)" href="https://smitka313.github.io/OpenSciEd-B.1/" target="_blank" rel="noopener"><div class="dot"></div><div><b>Unit 1</b><strong>Ecosystems</strong><span>Serengeti systems & biodiversity</span></div></a>
-        <a class="timeline-item" style="--accent:var(--b2)" href="https://smitka313.github.io/OpenSciEd-B.2/" target="_blank" rel="noopener"><div class="dot"></div><div><b>Unit 2</b><strong>Matter & Energy</strong><span>Fires, carbon & ecosystem management</span></div></a>
-        <a class="timeline-item" style="--accent:var(--b3)" href="https://smitka313.github.io/OpenSciEd-B.3/" target="_blank" rel="noopener"><div class="dot"></div><div><b>Unit 3</b><strong>Inheritance & Variation</strong><span>Cancer, DNA & mutations</span></div></a>
-        <a class="timeline-item" style="--accent:var(--b4)" href="https://smitka313.github.io/OpenSciEd-B.4/" target="_blank" rel="noopener"><div class="dot"></div><div><b>Unit 4</b><strong>Natural Selection</strong><span>Urbanization & population change</span></div></a>
-        <a class="timeline-item" style="--accent:var(--b5)" href="https://smitka313.github.io/OpenSciEd-B.5/" target="_blank" rel="noopener"><div class="dot"></div><div><b>Unit 5</b><strong>Speciation</strong><span>Arctic bears & extinction</span></div></a>
+        <a class="timeline-item" style="--accent:var(--b1)" href="https://smitka313.github.io/OpenSciEd-B.1/" target="_blank"><div class="dot"></div><div><b>Unit 1</b><strong>Ecosystems</strong><span>Systems & biodiversity</span></div></a>
+        <a class="timeline-item" style="--accent:var(--b2)" href="https://smitka313.github.io/OpenSciEd-B.2/" target="_blank"><div class="dot"></div><div><b>Unit 2</b><strong>Matter & Energy</strong><span>Carbon cycling & fire</span></div></a>
+        <a class="timeline-item" style="--accent:var(--b3)" href="https://smitka313.github.io/OpenSciEd-B.3/" target="_blank"><div class="dot"></div><div><b>Unit 3</b><strong>Inheritance</strong><span>Cancer, DNA & risk</span></div></a>
+        <a class="timeline-item" style="--accent:var(--b4)" href="https://smitka313.github.io/OpenSciEd-B.4/" target="_blank"><div class="dot"></div><div><b>Unit 4</b><strong>Natural Selection</strong><span>Urbanization & populations</span></div></a>
+        <a class="timeline-item" style="--accent:var(--b5)" href="https://smitka313.github.io/OpenSciEd-B.5/" target="_blank"><div class="dot"></div><div><b>Unit 5</b><strong>Speciation</strong><span>Bears & extinction</span></div></a>
+      </div>
+    </section>
+
+    <section id="literacy" class="literacy-wrap" aria-label="Disciplinary literacy overview">
+      <h2 class="section-title"><span class="icon"><span></span><span></span><span></span><span></span></span>Disciplinary Literacy Across Biology</h2>
+      <div class="literacy-intro">
+        <div>
+          <h3>How to use this section</h3>
+          <p>Use this as a planning crosswalk before a unit, during PLC conversations, or when explaining how students read, write, speak, model, and argue like scientists across the Biology course.</p>
+        </div>
+        <ul class="use-list">
+          <li><b>Before a unit:</b> preview the main literacy demands students will need.</li>
+          <li><b>During planning:</b> choose sentence stems, modeling supports, and data routines intentionally.</li>
+          <li><b>During observation/admin conversations:</b> name the specific literacy practice students are using.</li>
+        </ul>
+      </div>
+
+      <div class="literacy-grid">
+        <article class="literacy-card" style="--accent:var(--b1);--soft:#e8f5e5">
+          <h3>Unit 1</h3><div class="unit-focus">Ecosystems</div>
+          <div class="chips"><span class="chip">DQB</span><span class="chip">Systems</span><span class="chip">CER</span><span class="chip">Models</span></div>
+          <ul><li>Scientific questioning and Driving Question Board routines</li><li>Data integration across maps, graphs, observations, and texts</li><li>Model revision to explain ecosystem interactions and population change</li><li>Argumentation and evidence-based conservation reasoning</li></ul>
+          <a class="literacy-link" href="https://smitka313.github.io/OpenSciEd-B.1/" target="_blank">Open Unit 1 literacy details →</a>
+        </article>
+        <article class="literacy-card" style="--accent:var(--b2);--soft:#e5f7f4">
+          <h3>Unit 2</h3><div class="unit-focus">Matter & Energy</div>
+          <div class="chips"><span class="chip">Tracking</span><span class="chip">Labs</span><span class="chip">Models</span><span class="chip">Design</span></div>
+          <ul><li>Matter and energy tracking through fires, carbon sinks, and Earth systems</li><li>Lab literacy: variables, evidence, safety, and mechanism explanations</li><li>Quantitative modeling of CO₂, temperature, and feedback loops</li><li>Decision literacy for fire management systems and trade-offs</li></ul>
+          <a class="literacy-link" href="https://smitka313.github.io/OpenSciEd-B.2/" target="_blank">Open Unit 2 literacy details →</a>
+        </article>
+        <article class="literacy-card" style="--accent:var(--b3);--soft:#e7f3ff">
+          <h3>Unit 3</h3><div class="unit-focus">Inheritance & Variation</div>
+          <div class="chips"><span class="chip">Risk</span><span class="chip">Scale</span><span class="chip">Data</span><span class="chip">Health</span></div>
+          <ul><li>Data literacy around cancer incidence, probability, and risk</li><li>Scale literacy connecting DNA, proteins, cells, tissues, and body systems</li><li>Modeling gene expression, inheritance, mutation, and treatment mechanisms</li><li>Health and equity communication around social determinants and support</li></ul>
+          <a class="literacy-link" href="https://smitka313.github.io/OpenSciEd-B.3/" target="_blank">Open Unit 3 literacy details →</a>
+        </article>
+        <article class="literacy-card" style="--accent:var(--b4);--soft:#e4f8f8">
+          <h3>Unit 4</h3><div class="unit-focus">Natural Selection</div>
+          <div class="chips"><span class="chip">Data</span><span class="chip">Selection</span><span class="chip">Design</span><span class="chip">Transfer</span></div>
+          <ul><li>Population thinking and precision language about evolution over generations</li><li>Data interpretation of trait frequency, behavior, genetic diversity, and corridors</li><li>Model critique and revision across multiple urban species case studies</li><li>Design and decision literacy for cities that support biodiversity</li></ul>
+          <a class="literacy-link" href="https://smitka313.github.io/OpenSciEd-B.4/" target="_blank">Open Unit 4 literacy details →</a>
+        </article>
+        <article class="literacy-card" style="--accent:var(--b5);--soft:#e8f5e5">
+          <h3>Unit 5</h3><div class="unit-focus">Common Ancestry & Speciation</div>
+          <div class="chips"><span class="chip">Trees</span><span class="chip">Argument</span><span class="chip">Extinction</span><span class="chip">Solutions</span></div>
+          <ul><li>Evolutionary tree literacy and DNA/anatomy evidence comparison</li><li>Argumentation using fossil, allele, climate, and model evidence</li><li>Geologic time and extinction pattern analysis</li><li>Conservation decision-making using criteria, constraints, values, and evidence</li></ul>
+          <a class="literacy-link" href="https://smitka313.github.io/OpenSciEd-B.5/" target="_blank">Open Unit 5 literacy details →</a>
+        </article>
+      </div>
+
+      <div class="crosswalk">
+        <h3>Coursewide Literacy Threads</h3>
+        <div class="strategy-row"><b>Questioning</b><span>Students repeatedly generate, refine, categorize, and revisit questions through Driving Question Board routines.</span></div>
+        <div class="strategy-row"><b>Data & Representation</b><span>Students interpret graphs, tables, maps, simulations, images, readings, and models, then compare evidence across representations.</span></div>
+        <div class="strategy-row"><b>Modeling</b><span>Students build, critique, revise, and transfer models as new evidence becomes available.</span></div>
+        <div class="strategy-row"><b>Argumentation</b><span>Students make claims, select evidence, explain reasoning, compare competing explanations, and justify recommendations.</span></div>
+        <div class="strategy-row"><b>Decision-Making</b><span>Students evaluate solutions using criteria, constraints, trade-offs, stakeholder needs, and scientific evidence.</span></div>
       </div>
     </section>
 
     <section aria-label="OpenSciEd teacher resources">
       <h2 class="resources-title">OpenSciEd Teacher Resources</h2>
       <div class="resources">
-        <a class="resource-link" href="https://openscied.org/curriculum/high-school/how-to-adopt-high-school/" target="_blank" rel="noopener">Getting Started & Adopting</a>
-        <a class="resource-link" href="https://openscied.org/curriculum/high-school/standards-alignment/" target="_blank" rel="noopener">Standards Alignment</a>
-        <a class="resource-link" href="https://openscied.org/curriculum/high-school/simulation-library/" target="_blank" rel="noopener">Simulation Library</a>
-        <a class="resource-link" href="https://openscied.org/curriculum/high-school/phenomena-video-library/" target="_blank" rel="noopener">Phenomena Video Library</a>
-        <a class="resource-link" href="https://openscied.org/professional-learning/on-demand-teacher-support/" target="_blank" rel="noopener">On-Demand Teacher Support</a>
+        <a class="resource-link" href="https://openscied.org/curriculum/high-school/how-to-adopt-high-school/" target="_blank">Getting Started & Adopting</a>
+        <a class="resource-link" href="https://openscied.org/curriculum/high-school/standards-alignment/" target="_blank">Standards Alignment</a>
+        <a class="resource-link" href="https://openscied.org/curriculum/high-school/simulation-library/" target="_blank">Simulation Library</a>
+        <a class="resource-link" href="https://openscied.org/curriculum/high-school/phenomena-video-library/" target="_blank">Phenomena Video Library</a>
+        <a class="resource-link" href="https://openscied.org/professional-learning/on-demand-teacher-support/" target="_blank">On-Demand Teacher Support</a>
       </div>
     </section>
   </main>
