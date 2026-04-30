@@ -70,12 +70,21 @@
     .literacy-card li{margin:5px 0}
     .literacy-link{display:inline-flex;margin-top:12px;color:var(--accent);font-weight:900;text-decoration:none}
     .crosswalk{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 20px rgba(16,32,43,.08);padding:18px}
+    .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .mini-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 20px rgba(16,32,43,.08);padding:16px}
+    .mini-card h3{margin:0 0 10px;color:#162638;font-size:20px}
+    .mini-card ul{margin:0;padding-left:18px;color:var(--muted)}
+    .mini-card li{margin:7px 0}
+    .practice-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:10px}
+    .practice-table th,.practice-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+    .practice-table th{background:#f1fbfb;color:#162638;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+    .practice-table tr:last-child td{border-bottom:0}
     .crosswalk h3{margin:0 0 10px;color:#162638}
     .strategy-row{display:grid;grid-template-columns:220px 1fr;gap:12px;border-top:1px solid var(--line);padding:12px 0;color:var(--muted)}
     .strategy-row:first-of-type{border-top:0}.strategy-row b{color:#162638}
     .resources{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}.resource-link{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;border:1px solid var(--line);background:#fff;color:#226a85;text-decoration:none;font-weight:900;padding:12px;box-shadow:0 6px 18px rgba(16,32,43,.07)}
-    @media(max-width:1150px){.units,.literacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,1fr)}.header-inner{align-items:flex-start}.header-logo img{width:210px}.course-timeline{grid-template-columns:1fr;margin:0;padding:0}.course-timeline::before{display:none}.timeline-item{display:grid;grid-template-columns:32px 1fr;text-align:left;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}.dot{margin:4px auto 0}.literacy-intro{grid-template-columns:1fr}}
-    @media(max-width:720px){header{padding:28px 18px}.header-inner{display:block}.header-logo{margin-top:24px}.header-logo img{width:190px}.top-actions{gap:10px}.btn{font-size:14px;padding:11px 15px}main{padding:22px 16px}.units,.resources,.literacy-grid{grid-template-columns:1fr}.unit-card{min-height:auto}.section-title,.timeline-title,.resources-title{font-size:26px}.strategy-row{grid-template-columns:1fr}}
+    @media(max-width:1150px){.units,.literacy-grid,.mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,1fr)}.header-inner{align-items:flex-start}.header-logo img{width:210px}.course-timeline{grid-template-columns:1fr;margin:0;padding:0}.course-timeline::before{display:none}.timeline-item{display:grid;grid-template-columns:32px 1fr;text-align:left;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}.dot{margin:4px auto 0}.literacy-intro{grid-template-columns:1fr}}
+    @media(max-width:720px){header{padding:28px 18px}.header-inner{display:block}.header-logo{margin-top:24px}.header-logo img{width:190px}.top-actions{gap:10px}.btn{font-size:14px;padding:11px 15px}main{padding:22px 16px}.units,.resources,.literacy-grid,.mini-grid{grid-template-columns:1fr}.unit-card{min-height:auto}.section-title,.timeline-title,.resources-title{font-size:26px}.strategy-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -173,6 +182,53 @@
         <div class="strategy-row"><b>Modeling</b><span>Students build, critique, revise, and transfer models as new evidence becomes available.</span></div>
         <div class="strategy-row"><b>Argumentation</b><span>Students make claims, select evidence, explain reasoning, compare competing explanations, and justify recommendations.</span></div>
         <div class="strategy-row"><b>Decision-Making</b><span>Students evaluate solutions using criteria, constraints, trade-offs, stakeholder needs, and scientific evidence.</span></div>
+      </div>
+
+      <div class="mini-grid">
+        <article class="mini-card">
+          <h3>What It Sounds Like</h3>
+          <ul>
+            <li>“What evidence supports your claim?”</li>
+            <li>“Is that a pattern, a cause, or both?”</li>
+            <li>“How does your model explain that?”</li>
+            <li>“What happens if this variable changes?”</li>
+            <li>“Are we talking about an individual, population, ecosystem, or system?”</li>
+          </ul>
+        </article>
+        <article class="mini-card">
+          <h3>Literacy Progression</h3>
+          <ul>
+            <li><b>B.1:</b> Ask questions, build models, and explain ecosystem patterns.</li>
+            <li><b>B.2:</b> Track matter and energy using lab evidence and systems models.</li>
+            <li><b>B.3:</b> Explain mechanisms from DNA to cells to body systems.</li>
+            <li><b>B.4:</b> Use data to explain population change over generations.</li>
+            <li><b>B.5:</b> Argue from evidence about ancestry, speciation, extinction, and solutions.</li>
+          </ul>
+        </article>
+        <article class="mini-card">
+          <h3>Teacher Move → Literacy Move</h3>
+          <ul>
+            <li><b>“What is your evidence?”</b> → Argumentation</li>
+            <li><b>“Show that in your model.”</b> → Modeling</li>
+            <li><b>“What pattern do you notice?”</b> → Data interpretation</li>
+            <li><b>“What scale are we using?”</b> → Scale literacy</li>
+            <li><b>“What trade-off matters most?”</b> → Decision literacy</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="crosswalk">
+        <h3>NGSS Practice Crosswalk</h3>
+        <table class="practice-table">
+          <thead><tr><th>Literacy Move</th><th>NGSS Science & Engineering Practice</th><th>Where It Shows Up</th></tr></thead>
+          <tbody>
+            <tr><td>Questioning</td><td>Asking Questions and Defining Problems</td><td>DQB routines, phenomenon launches, design problems</td></tr>
+            <tr><td>Modeling</td><td>Developing and Using Models</td><td>Initial models, consensus models, model revision, transfer tasks</td></tr>
+            <tr><td>Data Interpretation</td><td>Analyzing and Interpreting Data</td><td>Graphs, maps, simulations, population data, climate data, health data</td></tr>
+            <tr><td>Argumentation</td><td>Engaging in Argument from Evidence</td><td>CER writing, competing explanations, conservation recommendations</td></tr>
+            <tr><td>Decision Literacy</td><td>Designing Solutions / Evaluating Solutions</td><td>Fire management, cancer support resources, biodiversity-supporting city design, species protection</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
