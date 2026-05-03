@@ -79,6 +79,14 @@
     .practice-table th,.practice-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
     .practice-table th{background:#f1fbfb;color:#162638;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
     .practice-table tr:last-child td{border-bottom:0}
+    .map-thumb{width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(16,32,43,.08);cursor:zoom-in;transition:transform .15s ease,box-shadow .15s ease}
+    .map-thumb:hover{transform:scale(1.01);box-shadow:0 10px 26px rgba(16,32,43,.14)}
+    .modal{display:none;position:fixed;z-index:9999;inset:0;background:rgba(8,20,28,.82);padding:24px;align-items:center;justify-content:center}
+    .modal.open{display:flex}
+    .modal-content{position:relative;max-width:min(1200px,96vw);max-height:92vh;background:white;border-radius:16px;padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:auto}
+    .modal-content img{display:block;width:100%;height:auto;border-radius:10px}
+    .modal-close{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:#10202b;color:white;font-size:22px;font-weight:900;width:38px;height:38px;cursor:pointer;line-height:1}
+    .modal-caption{margin:8px 44px 0 4px;color:var(--muted);font-size:14px;font-weight:700}
     .pacing-wrap{margin:0 0 48px}
     .pacing-note{background:#fff8eb;border:1px solid #f4d6a8;color:#5d4218;border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(16,32,43,.06);margin-bottom:18px}
     .pacing-note h3{margin:0 0 8px;color:#5d4218}
@@ -94,8 +102,19 @@
     .strategy-row{display:grid;grid-template-columns:220px 1fr;gap:12px;border-top:1px solid var(--line);padding:12px 0;color:var(--muted)}
     .strategy-row:first-of-type{border-top:0}.strategy-row b{color:#162638}
     .resources{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}.resource-link{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;border:1px solid var(--line);background:#fff;color:#226a85;text-decoration:none;font-weight:900;padding:12px;box-shadow:0 6px 18px rgba(16,32,43,.07)}
+    .hub-jump{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 28px}
+    .hub-jump a{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;border:1px solid var(--line);background:#fff;color:#226a85;text-decoration:none;font-weight:900;padding:12px;box-shadow:0 6px 18px rgba(16,32,43,.06);transition:.15s ease}
+    .hub-jump a:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,32,43,.10)}
+    .collapsible-hub{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:0;margin-bottom:24px;overflow:hidden}
+    .collapsible-hub>.section-title{margin:0;padding:18px 20px;cursor:pointer;justify-content:space-between;background:linear-gradient(135deg,#ffffff,#f5fbfc);font-size:26px}
+    .collapsible-hub>.section-title::after{content:'+';font-size:26px;color:#226a85;font-weight:900;margin-left:auto}
+    .collapsible-hub.open>.section-title::after{content:'–'}
+    .collapsible-hub .collapse-content{padding:0 20px 22px}
+    .collapsible-hub:not(.open) .collapse-content{display:none}
+    .collapsible-hub .literacy-grid,.collapsible-hub .pacing-grid,.collapsible-hub .mini-grid{margin-top:0}
+    .compact-note{color:var(--muted);font-size:14px;margin:-10px 0 20px}
     @media(max-width:1150px){.units,.literacy-grid,.mini-grid,.pacing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,1fr)}.header-inner{align-items:flex-start}.header-logo img{width:210px}.course-timeline{grid-template-columns:1fr;margin:0;padding:0}.course-timeline::before{display:none}.timeline-item{display:grid;grid-template-columns:32px 1fr;text-align:left;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}.dot{margin:4px auto 0}.literacy-intro{grid-template-columns:1fr}}
-    @media(max-width:720px){header{padding:28px 18px}.header-inner{display:block}.header-logo{margin-top:24px}.header-logo img{width:190px}.top-actions{gap:10px}.btn{font-size:14px;padding:11px 15px}main{padding:22px 16px}.units,.resources,.literacy-grid,.mini-grid,.pacing-grid{grid-template-columns:1fr}.unit-card{min-height:auto}.section-title,.timeline-title,.resources-title{font-size:26px}.strategy-row{grid-template-columns:1fr}}
+    @media(max-width:720px){header{padding:28px 18px}.header-inner{display:block}.header-logo{margin-top:24px}.header-logo img{width:190px}.top-actions{gap:10px}.btn{font-size:14px;padding:11px 15px}main{padding:22px 16px}.units,.resources,.literacy-grid,.mini-grid,.pacing-grid,.hub-jump{grid-template-columns:1fr}.unit-card{min-height:auto}.section-title,.timeline-title,.resources-title{font-size:26px}.strategy-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -117,6 +136,13 @@
   </header>
 
   <main class="wrap">
+    <nav class="hub-jump" aria-label="Dashboard quick links">
+      <a href="#units">Biology Units</a>
+      <a href="#literacy">Literacy</a>
+      <a href="#pacing-guide">Pacing Guide</a>
+      <a href="#course-scope">Course Scope</a>
+    </nav>
+    <p class="compact-note">Tip: The main unit links stay visible. Expand the planning sections below only when you need them.</p>
     <section id="units" aria-label="Biology unit dashboards">
       <h2 class="section-title"><span class="icon"><span></span><span></span><span></span><span></span></span>Biology Units</h2>
       <div class="units">
@@ -243,7 +269,7 @@
       </div>
     </section>
 
-    <section class="pacing-wrap" aria-label="Pacing and streamlining guide">
+    <section id="pacing-guide" class="pacing-wrap" aria-label="Pacing and streamlining guide">
       <h2 class="section-title"><span class="icon"><span></span><span></span><span></span><span></span></span>Pacing & Streamlining Guide</h2>
       <div class="pacing-note">
         <h3>When time is tight, protect the storyline.</h3>
@@ -298,7 +324,7 @@
       </div>
     </section>
 
-    <section class="coherence-wrap" aria-label="Course coherence and scope">
+    <section id="course-scope" class="coherence-wrap" aria-label="Course coherence and scope">
       <h2 class="section-title"><span class="icon"><span></span><span></span><span></span><span></span></span>Course Coherence & Scope</h2>
       <div class="crosswalk">
         <h3>Course Map (Scope & Sequence)</h3>
@@ -348,7 +374,7 @@
       </div>
     </section>
 
-    <section class="coherence-wrap" aria-label="Cross-course connections">
+    <section id="cross-course" class="coherence-wrap" aria-label="Cross-course connections">
       <h2 class="section-title"><span class="icon"><span></span><span></span><span></span><span></span></span>How Biology Connects to Other OpenSciEd Courses</h2>
       <div class="literacy-intro">
         <div>
@@ -387,7 +413,7 @@
 
       <details class="crosswalk" style="margin-top:18px;">
         <summary style="cursor:pointer;"><h3 style="display:inline;">View Full OpenSciEd Scope & Sequence Map</h3></summary>
-        <p style="color:var(--muted);margin:12px 0 0;">Add the full OpenSciEd scope and sequence graphic here if you want a complete reference for Biology, Chemistry, Physics, and Earth & Space Science connections. Keeping it collapsed prevents the landing page from feeling too crowded.</p>
+        <p style="color:var(--muted);margin:12px 0 0;"><button onclick="openMapModal()" style="font-weight:900;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;font:inherit;">Click map to zoom →</button><div style="margin-top:12px;"><img class="map-thumb" onclick="openMapModal()" src="https://openscied.org/wp-content/uploads/2024/08/HS-SS-2024-BJR-Cleaned-Up-2024-08-08-1.jpg" alt="OpenSciEd Scope and Sequence"/></div></p>
       </details>
     </section>
 
@@ -402,5 +428,52 @@
       </div>
     </section>
   </main>
+<div id="mapModal" class="modal" onclick="closeMapModal(event)" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-label="OpenSciEd Scope and Sequence Map">
+      <button class="modal-close" onclick="closeMapModal(event)" aria-label="Close zoomed map">×</button>
+      <img src="https://openscied.org/wp-content/uploads/2024/08/HS-SS-2024-BJR-Cleaned-Up-2024-08-08-1.jpg" alt="OpenSciEd Scope and Sequence full map">
+      <div class="modal-caption">OpenSciEd High School Scope & Sequence Map</div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      const sections=document.querySelectorAll('#literacy,#pacing-guide,#course-scope,#cross-course');
+      sections.forEach(function(section,index){
+        const heading=section.querySelector('.section-title');
+        if(!heading) return;
+        const content=document.createElement('div');
+        content.className='collapse-content';
+        while(heading.nextSibling){ content.appendChild(heading.nextSibling); }
+        section.appendChild(content);
+        section.classList.add('collapsible-hub');
+        if(index===0) section.classList.add('open');
+        heading.setAttribute('tabindex','0');
+        heading.setAttribute('role','button');
+        heading.setAttribute('aria-expanded',section.classList.contains('open')?'true':'false');
+        function toggle(){
+          section.classList.toggle('open');
+          heading.setAttribute('aria-expanded',section.classList.contains('open')?'true':'false');
+        }
+        heading.addEventListener('click',toggle);
+        heading.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); }});
+      });
+    });
+    function openMapModal(){
+      const modal=document.getElementById('mapModal');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function closeMapModal(event){
+      if(event && event.target.closest('.modal-content') && !event.target.classList.contains('modal-close')) return;
+      const modal=document.getElementById('mapModal');
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape') closeMapModal();
+    });
+  </script>
 </body>
 </html>
